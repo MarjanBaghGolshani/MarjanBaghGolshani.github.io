@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research · Marjan BaghGolshani</title>
+  <meta name="description" content="Research by Marjan BaghGolshani: multi-agent LLM safety, AI for cancer immunotherapy, and virtual cells.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/site.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Marjan BaghGolshani</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About &amp; CV</a></li>
+          <li><a href="research.html" aria-current="page">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Toggle dark mode">◐</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1 style="margin-top:3rem">Research</h1>
+    <p>My work has three threads. One makes AI systems safer, and the other two use AI to understand biology.</p>
+
+    <h2 id="llm-safety">🤖 Multi-agent LLM safety</h2>
+    <p>
+      LLM agents are increasingly deployed in teams. When they share a goal that conflicts with ours, they can
+      coordinate covertly, and their outputs alone may not show it. I study how to detect this collusion
+      from the models' internal activations, and how to assign credit fairly when agents work together.
+    </p>
+    <div class="project">
+      <div class="status">PhD · in progress</div>
+      <h3>Sequential collusion probes</h3>
+      <p>
+        Extends <a href="https://github.com/aaronrose227/narcbench">NARCBench</a>, a benchmark that detects collusion
+        between LLM agents with activation probes, from single messages to whole conversations. Adds trajectory-level probes,
+        per-round layer selection, and a benchmark comparing trajectory probes with simple averaging.
+      </p>
+      <ul class="tags"><li>Interpretability</li><li>Activation probes</li><li>Multi-agent systems</li><li>Open-weight LLMs</li></ul>
+    </div>
+
+    <h2 id="cancer">🎯 AI for cancer immunotherapy</h2>
+    <p>
+      Personalised cancer vaccines teach the immune system to recognise a patient's own tumour. The hard part is choosing
+      which antigens to target. I build computational tools for finding them: genomics pipelines, binding predictors and,
+      more recently, LLM-based systems.
+    </p>
+    <div class="project">
+      <div class="status">Research Assistant · with Macquarie Medical School</div>
+      <h3>LLMs for personalised cancer vaccine design</h3>
+      <p><span class="todo">One or two sentences about the LLM project: what goes in, what comes out, and why it matters.</span></p>
+      <ul class="tags"><li>LLMs</li><li>Cancer vaccines</li></ul>
+    </div>
+    <div class="project">
+      <div class="status">In progress · collaborative</div>
+      <h3>Whole-genome ERV insertion discovery</h3>
+      <p>
+        Endogenous retroviruses (ERVs) are ancient viral DNA in our genome. When they reactivate in tumours, they can be a source of
+        antigens. This Snakemake workflow takes paired tumour whole-genome FASTQs and calls candidate non-reference ERV insertions
+        with ERVcaller. It is a new module in a pipeline for ERV-derived antigens.
+      </p>
+      <ul class="tags"><li>Snakemake</li><li>Singularity</li><li>ERVcaller</li><li>WGS</li></ul>
+    </div>
+    <div class="project">
+      <div class="status">Zharfa &amp; Sharif University of Technology · 2022 – 2023</div>
+      <h3>Peptide–HLA binding prediction</h3>
+      <p>
+        Deep learning models that use 3D structural features to predict which tumour peptides bind a patient's HLA molecules,
+        a key step in choosing vaccine targets. Our module outperformed NetMHCpan 4.
+      </p>
+      <ul class="tags"><li>Deep learning</li><li>Structural biology</li><li>Immunoinformatics</li></ul>
+    </div>
+
+    <h2 id="virtual-cell">🧬 Virtual cells &amp; gene regulatory networks</h2>
+    <p>
+      If we could predict how a cell responds when a gene is switched off, we could screen therapies on a computer before testing them in the lab.
+      Most perturbation models predict well but work as black boxes. I build models that also learn
+      the gene regulatory network (GRN) behind the prediction.
+    </p>
+    <div class="project">
+      <div class="status">Master's research · Macquarie University</div>
+      <h3>A virtual-cell framework for predicting gene perturbations through regulatory network inference</h3>
+      <p>
+        Extends <a href="https://github.com/snap-stanford/GEARS">GEARS</a> with a signed GRN encoder trained with a multi-task loss
+        (expression error + sparsity + multi-hop regulation), so the model predicts post-perturbation expression and
+        learns an interpretable network at the same time. It improves prediction for the genes that matter most, the
+        differentially expressed ones.
+      </p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Method</th><th>MSE ↓</th><th>DEG-MSE ↓</th><th>μWD ↑</th><th>FOR ↓</th></tr></thead>
+          <tbody>
+            <tr><td>GEARS baseline</td><td>0.0253</td><td>0.2057</td><td>–</td><td>–</td></tr>
+            <tr><td><strong>Ours</strong></td><td><strong>0.0213</strong></td><td><strong>0.1647</strong></td><td>0.453</td><td>0.19</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="tags"><li>Graph neural networks</li><li>Perturb-seq</li><li>GRN inference</li><li>scELMo embeddings</li></ul>
+    </div>
+
+    <h2>Earlier work</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Drug molecule generation</h3>
+        <p>MSc thesis: reinforcement learning (GCPN) to generate drug-like molecules with desired properties.</p>
+      </div>
+      <div class="card">
+        <h3>circRNA in leukaemia</h3>
+        <p>Differential expression of circular RNAs in T cells as candidate leukaemia biomarkers.</p>
+      </div>
+      <div class="card">
+        <h3>OMR exam grader</h3>
+        <p>Desktop app that grades multiple-choice answer sheets from scanned images.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Marjan BaghGolshani</span>
+      <ul>
+        <li><a href="mailto:marjan.ba75@gmail.com">Email</a></li>
+        <li><a href="https://github.com/MarjanGolshani">GitHub</a></li>
+        <li><span class="todo">LinkedIn</span></li>
+        <li><span class="todo">Google Scholar</span></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
