@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marjangolshani.github.io/sitemap.xml
+Sitemap: https://marjanbaghgolshani.github.io/sitemap.xml
